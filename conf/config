@@ -17,7 +17,7 @@ NEWSARTS=${NEWSARTS-/var/news}
 # =()<NEWSOV=${NEWSOV-@<NEWSOV>@}>()=
 NEWSOV=${NEWSOV-/var/news}
 # =()<NEWSPATH=${NEWSPATH-@<NEWSPATH>@}>()=
-NEWSPATH=${NEWSPATH-/bin:/usr/bin:/usr/contrib/bin}
+NEWSPATH=${NEWSPATH-/bin:/usr/bin}
 # =()<NEWSUMASK=${NEWSUMASK-@<NEWSUMASK>@}>()=
 NEWSUMASK=${NEWSUMASK-022}
 # =()<NEWSCONFIG=${NEWSCONFIG-@<NEWSCONFIG>@}>()=

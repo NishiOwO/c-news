@@ -18,7 +18,7 @@
 #endif
 #ifndef NEWSPATH
 /* =()<#define	NEWSPATH	"@<NEWSPATH>@">()= */
-#define	NEWSPATH	"/bin:/usr/bin:/usr/contrib/bin"
+#define	NEWSPATH	"/bin:/usr/bin"
 #endif
 #ifndef NEWSARTS
 /* =()<#define	NEWSARTS	"@<NEWSARTS>@">()= */

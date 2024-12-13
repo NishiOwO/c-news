@@ -372,7 +372,7 @@ echo
 echo 'Historically the only normal compilation option needed for most'
 echo 'programs is -O, but again compilers, especially newer ones, differ.'
 echo '(NOTE:  many 386/486 compilers miscompile dbz if -O is used!)'
-copts="`$ask 'What options should be given to the compiler' \"${copts--O}\"`"
+copts="`$ask 'What options should be given to the compiler' \"${copts--O -fcommon}\"`"
 
 echo
 echo 'The final linking ("ld") step of compiling might need an option,'

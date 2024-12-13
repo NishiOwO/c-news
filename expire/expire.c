@@ -283,11 +283,12 @@ void
 control(f)
 register FILE *f;
 {
-	register char *p;
+	char *p;
 	register int gotone = 0;
 	register int lineno = 0;
+	register int len = 0;
 
-	while ((p = fgetline(f, (size_t *)NULL)) != NULL) {
+	while ((len = getline(&p, (size_t *)NULL, f)) != -1) {
 		lineno++;
 		if (*p != '#')
 			ctlline(p, lineno);
@@ -407,16 +408,17 @@ void
 prime(afile)
 char *afile;
 {
-	register char *line;
+	char *line;
 	register FILE *af;
 	register struct ctl *ct;
 #	define	NFACT	4
 	char *field[NFACT];
 	int nf;
+	int len;
 	register int hash;
 
 	af = eufopen(afile, "r");
-	while ((line = fgetline(af, (size_t *)NULL)) != NULL) {
+	while ((len = getline(&line, (size_t *)NULL, af)) != -1) {
 		nf = split(line, field, NFACT, "");
 		if (nf != NFACT)
 			die("wrong number of fields in active for `%s'", field[0]);

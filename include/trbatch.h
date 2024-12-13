@@ -23,12 +23,16 @@ struct batchfile {
 };
 
 /* imports from trbatch.c */
-extern struct batchfile *bfopen(), *bfisopen();
-extern statust bffkclose(), bfrealclose();
+extern struct batchfile *bfopen();
+static struct batchfile *bfisopen();
+extern statust bffkclose();
+static statust bfrealclose();
 extern int bfflush();
 /* imports from trbatcomm.c */
-extern statust bfclose(), bfrclose();
-extern struct batchfile *bfincache(), *fakebf();
+extern statust bfclose();
+static statust bfrclose();
+static struct batchfile *bfincache();
+extern struct batchfile *fakebf();
 
 extern struct batchfile batchfile[];	/* try to keep open always */
 #define lastbf &batchfile[NOPENBFS-1]

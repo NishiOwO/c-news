@@ -1,6 +1,6 @@
 MORECFLAGS=-I. -DFLUSHEVERY=6
 # =()<@<INCLUDE>@>()=
-.include "../include/config.make"
+include ../include/config.make
 
 BINS=relaynews
 PROGS=$(BINS) relayrun

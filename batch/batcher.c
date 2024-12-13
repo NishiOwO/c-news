@@ -76,10 +76,11 @@ FILE *list;
 char *filename;
 {
 	char *article;
+	int artlen;
 
 	if (debug)
 		fprintf(stderr, "procfile(%s)\n", filename);
-	while ((article = fgetline(list, (size_t *)NULL)) != NULL)
+	while ((artlen = getline(&article, (size_t *)NULL, list)) != -1)
 		procart(article);
 
 	if (!feof(list))

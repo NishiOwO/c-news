@@ -10,7 +10,7 @@ NEWSOV=$NEWSARTS
 
 
 # =()<NEWSPATH=@<NEWSPATH>@>()=
-NEWSPATH=/bin:/usr/bin:/usr/contrib/bin
+NEWSPATH=/bin:/usr/bin
 
 
 

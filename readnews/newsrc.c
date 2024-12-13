@@ -14,7 +14,7 @@ static int rclineno;		/* current lineno in .newsrc */
 static bool sortrc;		/* if we should sort on output */
 
 static newsrc *findnewsrc();
-static int getline();
+static int cn_getline();
 static int dooptions();
 static int dorcline();
 static int writengline();
@@ -23,7 +23,7 @@ readnewsrc()
 {
 	register FILE *f;
 	static char option[] = "options";
-	char word[BUFSIZ], rest[BUFSIZ];	/* getline knows sizes */
+	char word[BUFSIZ], rest[BUFSIZ];	/* cn_getline knows sizes */
 	extern char *getenv();
 
 	if ((rcname = getenv("HOME")) == NULL)
@@ -33,7 +33,7 @@ readnewsrc()
 		return;
 
 	rclineno = 0;
-	while (getline(f, word, rest))
+	while (cn_getline(f, word, rest))
 		if (CMP(word, option) == 0)
 			dooptions(rest);
 		else
@@ -47,7 +47,7 @@ readnewsrc()
  * This is a poor design, as w & r are unchecked for overrun.
  */
 static int
-getline(f, w, r)
+cn_getline(f, w, r)
 register FILE *f;
 char *w, *r;
 {

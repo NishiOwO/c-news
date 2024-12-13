@@ -22,7 +22,7 @@ static char RCSid[] = "$Header$";
 #endif
 
 int debug = 0;
-char *progname;
+extern char *progname;
 
 extern void error();
 #ifdef UTZOOERR

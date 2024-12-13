@@ -12,7 +12,7 @@ static int lineno;
 static active	*alist;
 
 static
-getline(f, g, d, d2)
+cn_getline(f, g, d, d2)
 register FILE *f;
 char *g, *d, *d2;
 {
@@ -61,7 +61,7 @@ readactive()
 	alist = last = NULL;
 	f = fopenf(ctlfile("active"), "r");
 	lineno = 0;
-	while (getline(f, gbuf, dbuf, dbuf2)) {
+	while (cn_getline(f, gbuf, dbuf, dbuf2)) {
 		ap = NEW(active);
 		ap->a_name = newstr(gbuf);
 		ap->a_seq = atol(dbuf);

@@ -9,7 +9,7 @@ NEWSOV=$NEWSARTS
 
 
 # =()<NEWSPATH=${NEWSPATH-@<NEWSPATH>@}>()=
-NEWSPATH=${NEWSPATH-/bin:/usr/bin:/usr/contrib/bin}
+NEWSPATH=${NEWSPATH-/bin:/usr/bin}
 
 
 
